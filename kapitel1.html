@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Buchprojekt – Kapitel 1</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <h1>Buchprojekt – Kapitel 1</h1>
+  <div id="content">Lade Kapitel …</div>
+
+  <script>
+    fetch('kapitel1.md')
+      .then(response => {
+        if (!response.ok) throw new Error("Markdown konnte nicht geladen werden.");
+        return response.text();
+      })
+      .then(text => {
+        document.getElementById('content').innerHTML = marked.parse(text);
+      })
+      .catch(error => {
+        document.getElementById('content').innerHTML = "Fehler beim Laden des Kapitels.";
+        console.error(error);
+      });
+  </script>
+</body>
+</html>
