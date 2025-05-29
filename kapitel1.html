@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <title>Buchprojekt – Kapitel 1</title>
@@ -12,11 +12,30 @@
       padding: 0 1rem;
       line-height: 1.6;
     }
+    nav {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #ccc;
+      display: flex;
+      justify-content: space-between;
+    }
+    a {
+      text-decoration: none;
+      color: #0066cc;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <h1>Buchprojekt – Kapitel 1</h1>
   <div id="content">Lade Kapitel …</div>
+
+  <nav>
+    <a href="index.html">← Zurück zur Startseite</a>
+    <a href="https://forms.gle/dein-feedback-link" target="_blank">💬 Feedback geben</a>
+  </nav>
 
   <script>
     fetch('kapitel1.md')
